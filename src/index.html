@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatea sin contacto</title>
+    <style>
+        #actionButton {
+            width: 30%;
+            background-color: #4bca5a;
+            margin: 1%;
+            padding: 1%;
+            border-radius: 50px;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,7 +22,7 @@
     </header>
     <div id="number">
         <input type="number" id="numberInput" placeholder="Ingresa tu número">
-        <div id="actionButton">Enviar</div>
+        <div id="actionButton">Whatsapp!</div>
     </div>
     <div id="instructions">
         <p>Ingresa el número de telefono con el que quieres hablar y luego presiona el botón, esto te llevará al sitio web de whatsapp donde debes confirmar que quieres hablar con ese número y luego se abrirá tu whatsapp</p>
@@ -20,5 +30,15 @@
     <footer>
         <p>Página creada con fines autodidactas y de aprendizaje, nota: todo el contenido audiovisual (audio e imágenes) son propiedad de Whatsapp Inc, <a href="https://github.com/santiaguf/whatsapp" target="_blank">código fuente</a></p>
     </footer>
+    <script type="text/javascript">
+        const actionButton = document.getElementById('actionButton');
+        const numberInput = document.getElementById('numberInput');
+        actionButton.addEventListener('click', () => {
+            const number = `57${numberInput.value}`;
+            if (number.length > 0) {
+                window.open(`https://wa.me/${number}`);
+            }
+        });
+    </script>
 </body>
 </html>
